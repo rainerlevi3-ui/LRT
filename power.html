@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Power Supplies Database • YES TESK</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05070d;
+            color: #f5f7ff;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #080c16;
+            border-bottom: 1px solid #1c2940;
+            padding: 20px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #9ca9bd;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.2s;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .back {
+            color: #7ea7ff;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .back:hover {
+            color: #ffffff;
+        }
+
+        .page-label {
+            color: #6f91c9;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #8996aa;
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+
+        .memory-card {
+            background: linear-gradient(145deg, #0c1220, #080c15);
+            border: 1px solid #1b2a42;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .memory-header {
+            border-bottom: 1px solid #1b2a42;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .memory-header h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .manufacturer {
+            color: #6f91c9;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .spec-row {
+            background: #0a101c;
+            border: 1px solid #17243a;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .spec-row span {
+            color: #718099;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        .spec-row strong {
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+        footer {
+            text-align: center;
+            color: #58657a;
+            padding: 50px 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+
+            main {
+                width: 92%;
+                margin-top: 35px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .specs {
+                grid-template-columns: 1fr;
+            }
+
+            .memory-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">YES TESK</a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="processors.html">Processors</a>
+        <a href="graphics.html">Graphics</a>
+        <a href="ram.html">RAM</a>
+        <a href="motherboards.html">Motherboards</a>
+        <a href="power.html">Power Supplies</a>
+    </nav>
+</header>
+
+<main>
+
+    <a class="back" href="index.html">← Back to Hardware</a>
+
+    <div class="page-label">POWER SUPPLY DATABASE</div>
+
+    <h1>Power Supplies</h1>
+
+    <p class="subtitle">
+        High-wattage desktop electricity distribution specs and heavy-duty power units.
+    </p>
+
+    <div class="memory-card">
+
+        <div class="memory-header">
+            <h2>2012 Flagship 1200W+ Heavyweight PSU</h2>
+
+            <div class="manufacturer">
+                HIGH-END MULTI-GPU ELECTRICITY PLANT
+            </div>
+        </div>
+
+        <div class="specs">
+
+            <div class="spec-row">
+                <span>RELEASE ERA</span>
+                <strong>2012 (Quad-SLI / CrossFire Era)</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>CONTINUOUS OUTPUT POWER</span>
+                <strong>1200 Watts</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>+12V RAIL ARCHITECTURE</span>
+                <strong>Single +12V Rail (100.4 Amps)</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MINOR RAILS (+3.3V / +5V)</span>
+                <strong>30A Each (180W Combined Max)</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>EFFICIENCY RATING</span>
+                <strong>80 PLUS Gold Certified</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>CABLING TYPE</span>
+                <strong>100% Fully Modular</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>COOLING FAN</span>
+                <strong>140mm Double Ball-Bearing Fan</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PRIMARY CAPACITOR BUILD</span>
+                <strong>105°C Japanese Industrial Capacitors</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>CIRCUIT PROTECTION</span>
+                <strong>OPP / OVP / SCP / OCP / OTP</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PRIMARY PURPOSE</span>
+                <strong>Powering dual-GPU monsters that double as room heaters</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    YES TESK • Hardware Database
+</footer>
+
+</body>
+</html>

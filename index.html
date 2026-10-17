@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YES TESK | Tech Universe</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #070d18;
+  color: #f1f6ff;
+  font-family: Arial, sans-serif;
+}
+header {
+  height: 76px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a1322;
+  border-bottom: 1px solid #18304a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.logo span, .blue { color: #35aaff; }
+nav { display: flex; gap: 25px; }
+nav a {
+  color: #b7c8dd;
+  text-decoration: none;
+  font-size: 14px;
+  transition: .2s;
+}
+nav a:hover { color: #35aaff; }
+.menu {
+  display: none;
+  background: none;
+  color: white;
+  border: 0;
+  font-size: 26px;
+  cursor: pointer;
+}
+.hero {
+  min-height: 540px;
+  padding: 90px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background:
+    radial-gradient(ellipse at 75% 50%, #10325b 0%, transparent 55%),
+    #070d18;
+}
+.hero-text { max-width: 580px; }
+.eyebrow {
+  color: #35aaff;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+h1 {
+  font-size: clamp(42px, 6vw, 70px);
+  line-height: 1.05;
+  margin: 22px 0;
+}
+.hero p {
+  color: #9db0c8;
+  line-height: 1.8;
+  font-size: 16px;
+  max-width: 510px;
+}
+.actions { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #28639a;
+  color: #dceeff;
+  background: #0c1b2d;
+  cursor: pointer;
+  transition: .2s;
+}
+.btn.primary { background: #1687e7; color: white; }
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px #1687e755;
+}
+.hero-art {
+  width: 42%;
+  max-width: 480px;
+  min-width: 250px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle, #123d6d 0%, #0b1a2b 48%, transparent 70%);
+}
+.chip {
+  width: 190px;
+  height: 190px;
+  border: 2px solid #35aaff;
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  font-weight: bold;
+  color: #65c2ff;
+  background: linear-gradient(145deg, #122a46, #08111f);
+  box-shadow: 0 0 45px #1687e766, inset 0 0 25px #1687e722;
+  transform: rotate(-8deg);
+}
+section { padding: 75px 8%; }
+.section-heading { margin-bottom: 35px; }
+.section-heading h2 { font-size: 32px; margin-bottom: 12px; }
+.section-heading p { color: #8da4bf; line-height: 1.6; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.card {
+  background: #0c1727;
+  border: 1px solid #1c3550;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: .25s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #35aaff;
+  box-shadow: 0 10px 35px #0008;
+}
+.card-art {
+  height: 155px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, #163a61, #0b1727 72%);
+  font-size: 60px;
+}
+.card-content { padding: 20px; }
+.card h3 { margin-bottom: 10px; font-size: 18px; }
+.card p { color: #91a7c0; font-size: 13px; line-height: 1.6; }
+.card a {
+  display: inline-block;
+  color: #35aaff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 17px;
+}
+.projects { background: #091321; }
+.project {
+  padding: 30px;
+  background: #0d1c2e;
+  border: 1px solid #1e3a58;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+.project h3 { margin-bottom: 10px; }
+.project p { color: #9db0c8; line-height: 1.7; }
+footer {
+  text-align: center;
+  padding: 35px 8%;
+  border-top: 1px solid #1c3047;
+  color: #8197b1;
+  font-size: 13px;
+}
+@media(max-width: 850px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .hero { flex-direction: column; text-align: center; }
+  .hero-text { margin: auto; }
+  .hero p { margin: auto; }
+  .actions { justify-content: center; }
+  .hero-art { width: 100%; }
+}
+@media(max-width: 600px) {
+  header { padding: 0 5%; }
+  .menu { display: block; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: #0a1322;
+    padding: 22px;
+    flex-direction: column;
+    border-bottom: 1px solid #18304a;
+  }
+  nav.open { display: flex; }
+  section { padding: 55px 5%; }
+  .grid { grid-template-columns: 1fr; }
+  .hero { padding: 65px 5%; }
+  .chip { width: 145px; height: 145px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">YES <span>TESK</span></div>
+  <button class="menu" id="menu" aria-label="Toggle menu">☰</button>
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="eyebrow">THE FUTURE OF TECH</div>
+    <h1>EXPLORE THE <span class="blue">TECH</span> UNIVERSE</h1>
+    <p>
+      Discover processors, graphics cards, motherboards
+      and the technology powering tomorrow.
+      Welcome to YES TESK.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#hardware">Explore Tech →</a>
+      <a class="btn" href="#projects">Our Projects</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="chip">YT</div>
+  </div>
+</section>
+
+<section id="hardware">
+  <div class="section-heading">
+    <div class="eyebrow">TECHNOLOGY DATABASE</div>
+    <h2>Explore <span class="blue">Hardware</span></h2>
+    <p>Explore the components that power computers.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="card-art">⚙️</div>
+      <div class="card-content">
+        <h3>Processors</h3>
+        <p>Explore Intel, AMD and other CPUs, architectures and specifications.</p>
+        <a href="processors.html">Explore Processors →</a>
+        
+<article class="card">
+    <div class="card-art">💾</div>
+
+    <div class="card-content">
+        <h3>RAM</h3>
+
+        <p>
+            Explore RAM modules, memory technologies, speeds,
+            capacities and specifications.
+        </p>
+
+        <a href="ram.html">Explore RAM →</a>
+    </div>
+</article>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-art">🎮</div>
+      <div class="card-content">
+        <h3>Graphics Cards</h3>
+        <p>Learn about GPUs, graphics technology and gaming performance.</p>
+        <a href="graphics.html">Explore Graphics Cards →</a>→</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-art">▦</div>
+      <div class="card-content">
+        <h3>Motherboards</h3>
+        <p>Explore chipsets, sockets, memory and computer connectivity.</p>
+        <a href="motherboards.html">Explore Motherboards →</a>
+
+      </div><article class="card">
+      <div class="card-art">⚡</div>
+      <div class="card-content">
+        <h3>Power Supplies</h3>
+        <p>Explore wattage, efficiency ratings, mystery power bricks, and electrical survival.</p>
+        <a href="power.html">Explore Power Supplies →</a>
+      </div>
+
+    </article>
+    </article>
+    <article class="card">
+      <div class="card-art">🖥️</div>
+      <div class="card-content">
+        <h3>PC Builds</h3>
+        <p>Discover custom builds, experiments and computer projects.</p>
+        <a href="No.html">Discover →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="section-heading">
+    <div class="eyebrow">INNOVATION & DISCOVERY</div>
+    <h2>Tech <span class="blue">Projects</span></h2>
+    <p>Experiments, builds and technology exploration.</p>
+  </div>
+  <div class="project">
+    <h3>Retro Hardware</h3>
+    <p>Explore classic motherboards, older processors
+    and the history of personal computers.</p>
+  </div>
+  <div class="project">
+    <h3>Operating Systems</h3>
+    <p>Discover Windows, Linux, ChromeOS and
+    experimental operating system projects.</p>
+  </div>
+  <div class="project">
+    <h3>Custom PC Experiments</h3>
+    <p>Explore computer builds, hardware tests
+    and creative technical projects.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-heading">
+    <div class="eyebrow">ABOUT YES TESK</div>
+    <h2>Technology without limits.</h2>
+    <p>
+      YES TESK is a tech-themed website dedicated
+      to computer hardware, operating systems,
+      innovation and discovering how technology works.
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">YES <span>TESK</span></div>
+  <p style="margin-top:12px">TECHNOLOGY • HARDWARE • INNOVATION</p>
+  <p style="margin-top:12px">© 2026 YES TESK</p>
+</footer>
+
+<script>
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASUS P5G41T-M LX | YES TESK</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05070d;
+            color: #e8eef7;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #080c16;
+            border-bottom: 1px solid #1c2940;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: #aebbd0;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 25px 45px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #0b1424;
+            border: 1px solid #1b2a42;
+            color: #7fa9ff;
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 72px);
+            line-height: 1;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            color: #93a1b7;
+            font-size: 17px;
+            max-width: 750px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px 70px;
+        }
+
+        .section {
+            margin-top: 35px;
+        }
+
+        .section h2 {
+            font-size: 25px;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #0c1220, #080c15);
+            border: 1px solid #1b2a42;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .spec-row {
+            background: #0a101c;
+            border: 1px solid #17243a;
+            border-radius: 8px;
+            padding: 13px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            min-height: 54px;
+        }
+
+        .spec-row span {
+            color: #7f8da3;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.6px;
+        }
+
+        .spec-row strong {
+            color: #edf3fc;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 16px;
+            background: #0a101c;
+            border-left: 3px solid #315b91;
+            color: #9eacc1;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 18px;
+            background: #101a2b;
+            border: 1px solid #263a5a;
+            border-radius: 8px;
+            color: #dce8fa;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-button:hover {
+            background: #16243a;
+            border-color: #3a5c8d;
+        }
+
+        footer {
+            border-top: 1px solid #1c2940;
+            background: #080c16;
+            text-align: center;
+            padding: 30px 20px;
+            color: #65738a;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .spec-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            header {
+                padding: 16px 18px;
+            }
+
+            main,
+            .hero {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .spec-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .spec-row strong {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="nav">
+        <a href="index.html" class="logo">YES TESK</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="processors.html">Processors</a>
+            <a href="graphics.html">Graphics</a>
+            <a href="ram.html">RAM</a>
+            <a href="motherboards.html">Motherboards</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <span class="tag">MOTHERBOARD DATABASE</span>
+
+    <h1>ASUS P5G41T-M LX</h1>
+
+    <p class="subtitle">
+        Detailed hardware specifications for the ASUS P5G41T-M LX
+        microATX motherboard.
+    </p>
+</section>
+
+<main>
+
+    <section class="section">
+        <h2>Motherboard Specifications</h2>
+
+        <div class="card">
+            <div class="spec-grid">
+
+                <div class="spec-row">
+                    <span>MANUFACTURER</span>
+                    <strong>ASUS</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MODEL</span>
+                    <strong>P5G41T-M LX</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CHIPSET</span>
+                    <strong>Intel G41</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>SOUTHBRIDGE</span>
+                    <strong>Intel ICH7</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CPU SOCKET</span>
+                    <strong>LGA775 / Socket T</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CPU SUPPORT</span>
+                    <strong>Intel Core 2 / Pentium / Celeron families</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>FORM FACTOR</span>
+                    <strong>MicroATX</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BOARD WIDTH</span>
+                    <strong>20.1 cm</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BOARD DEPTH</span>
+                    <strong>24.4 cm</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DIMENSIONS</span>
+                    <strong>24.4 × 20.1 cm</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MEMORY TYPE</span>
+                    <strong>DDR3 SDRAM</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MEMORY SLOTS</span>
+                    <strong>2 × 240-pin DIMM</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MAXIMUM MEMORY</span>
+                    <strong>8 GB</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MEMORY CHANNELS</span>
+                    <strong>Dual Channel</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MEMORY TYPE SUPPORT</span>
+                    <strong>Non-ECC, Unbuffered</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DDR3-800</span>
+                    <strong>Supported</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DDR3-1066</span>
+                    <strong>Supported</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DDR3-1333</span>
+                    <strong>Supported via Overclocking</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>FRONT SIDE BUS</span>
+                    <strong>800 / 1066 / 1333 MHz</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PCI EXPRESS x16</span>
+                    <strong>1 × PCIe x16</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PCI EXPRESS x1</span>
+                    <strong>1 × PCIe x1</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PCI SLOTS</span>
+                    <strong>2 × PCI</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PRIMARY STORAGE INTERFACE</span>
+                    <strong>SATA II</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>SATA PORTS</span>
+                    <strong>4 × SATA 3 Gb/s</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>IDE / PATA</span>
+                    <strong>1 × Ultra DMA 100/66/33</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>USB STANDARD</span>
+                    <strong>USB 2.0 / 1.1</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MAXIMUM USB PORTS</span>
+                    <strong>8</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>ONBOARD GRAPHICS</span>
+                    <strong>Intel GMA X4500</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>GRAPHICS OUTPUT</span>
+                    <strong>VGA / RGB</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MAXIMUM VGA RESOLUTION</span>
+                    <strong>2048 × 1536 @ 75 Hz</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>GRAPHICS API</span>
+                    <strong>DirectX 10</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>AUDIO CODEC</span>
+                    <strong>Realtek ALC887</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>AUDIO CHANNELS</span>
+                    <strong>8-channel HD Audio</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>NETWORK CONTROLLER</span>
+                    <strong>Realtek Gigabit Ethernet</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>NETWORK SPEED</span>
+                    <strong>Gigabit Ethernet</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BIOS</span>
+                    <strong>AMI BIOS</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BIOS ROM</span>
+                    <strong>8 Mb Flash ROM</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CPU POWER CONNECTOR</span>
+                    <strong>4-pin ATX12V</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MAIN POWER CONNECTOR</span>
+                    <strong>24-pin ATX</strong>
+                </div>
+
+            </div>
+
+            <div class="note">
+                Specifications are based on ASUS documentation and the
+                P5G41T-M LX manual. Some CPU and memory support can depend
+                on BIOS version, processor revision, and memory configuration.
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Onboard Connections</h2>
+
+        <div class="card">
+            <div class="spec-grid">
+
+                <div class="spec-row">
+                    <span>PS/2 KEYBOARD</span>
+                    <strong>1</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PS/2 MOUSE</span>
+                    <strong>1</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PARALLEL PORT</span>
+                    <strong>1 × LPT</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>SERIAL PORT</span>
+                    <strong>1 × COM</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>LAN PORT</span>
+                    <strong>1 × RJ-45</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BACK USB PORTS</span>
+                    <strong>4 × USB</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BACK AUDIO</span>
+                    <strong>3 × Audio Jacks</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DIGITAL AUDIO</span>
+                    <strong>S/PDIF Out</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CPU FAN CONNECTOR</span>
+                    <strong>4-pin</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CHASSIS FAN CONNECTOR</span>
+                    <strong>3-pin</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>FRONT PANEL AUDIO</span>
+                    <strong>AAFP</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>INTERNAL USB HEADERS</span>
+                    <strong>2</strong>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <a href="index.html" class="back-button">← BACK TO YES TESK</a>
+
+</main>
+
+<footer>
+    YES TESK — Hardware Database
+</footer>
+
+</body>
+</html>
+```

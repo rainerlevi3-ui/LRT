@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA GeForce 256 • YES TESK</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05070d;
+            color: #f5f7ff;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #080c16;
+            border-bottom: 1px solid #1c2940;
+            padding: 20px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #9ca9bd;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .back {
+            color: #7ea7ff;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: color 0.2s ease;
+        }
+
+        .back:hover {
+            color: #ffffff;
+        }
+
+        .page-label {
+            color: #6f91c9;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #8996aa;
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .gpu-card {
+            background: linear-gradient(145deg, #0c1220, #080c15);
+            border: 1px solid #1b2a42;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .gpu-header {
+            border-bottom: 1px solid #1b2a42;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .gpu-header h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .manufacturer {
+            color: #6f91c9;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.6;
+        }
+
+        .spec-section {
+            margin-bottom: 35px;
+        }
+
+        .spec-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .spec-section h3 {
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .specs {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .spec-row {
+            min-width: 0;
+            background: #0a101c;
+            border: 1px solid #17243a;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            overflow-wrap: anywhere;
+        }
+
+        .spec-row span {
+            color: #718099;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        .spec-row strong {
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .comparison-label {
+            color: #6f91c9;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            text-align: center;
+            color: #58657a;
+            padding: 50px 20px;
+            font-size: 13px;
+            border-top: 1px solid #111a2a;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            main {
+                width: 92%;
+                margin-top: 35px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+
+            .specs {
+                grid-template-columns: 1fr;
+            }
+
+            .gpu-card {
+                padding: 20px;
+            }
+
+            .gpu-header h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">YES TESK</div>
+
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="graphics.html">Graphics Cards</a>
+    </nav>
+</header>
+
+<main>
+    <a class="back" href="graphics.html">
+        &larr; Back to Graphics Cards
+    </a>
+
+    <div class="page-label">
+        GRAPHICS PROCESSOR DATABASE
+    </div>
+
+    <h1>NVIDIA GeForce 256</h1>
+
+    <p class="subtitle">
+        NVIDIA's original GeForce graphics processor, based on the NV10 architecture.
+    </p>
+
+    <!-- NVIDIA GEFORCE 256 -->
+    <section class="gpu-card">
+        <div class="gpu-header">
+            <h2>NVIDIA GeForce 256</h2>
+            <div class="manufacturer">
+                NVIDIA &bull; NV10 &bull; CELSIUS
+            </div>
+        </div>
+
+        <!-- GENERAL INFORMATION -->
+        <div class="spec-section">
+            <h3>General Information</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>MANUFACTURER</span>
+                    <strong>NVIDIA</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PRODUCT</span>
+                    <strong>GeForce 256</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CODENAME</span>
+                    <strong>NV10</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>ARCHITECTURE</span>
+                    <strong>Celsius</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>GENERATION</span>
+                    <strong>GeForce 256</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>RELEASE YEAR</span>
+                    <strong>1999</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>LAUNCH DATE</span>
+                    <strong>October 11, 1999</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PREDECESSOR</span>
+                    <strong>RIVA TNT2</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- GPU CORE -->
+        <div class="spec-section">
+            <h3>GPU Core</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>PROCESS NODE</span>
+                    <strong>220 nm</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MANUFACTURER PROCESS</span>
+                    <strong>TSMC</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DIE SIZE</span>
+                    <strong>139 mm&sup2;</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>TRANSISTORS</span>
+                    <strong>~17 million</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CORE CLOCK</span>
+                    <strong>120 MHz</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BOOST CLOCK</span>
+                    <strong>120 MHz</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PIXEL PIPELINES</span>
+                    <strong>4</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>TEXTURE MAPPING UNITS</span>
+                    <strong>4</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>RENDER OUTPUT UNITS</span>
+                    <strong>4</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- MEMORY -->
+        <div class="spec-section">
+            <h3>Video Memory</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>MEMORY CAPACITY</span>
+                    <strong>32–64 MB</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MEMORY BUS</span>
+                    <strong>128-bit</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>SDR MEMORY TYPE</span>
+                    <strong>SDR SDRAM</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>SDR MEMORY CLOCK</span>
+                    <strong>166 MHz</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>SDR BANDWIDTH</span>
+                    <strong>2.656 GB/s</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DDR MEMORY TYPE</span>
+                    <strong>DDR SDRAM</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DDR MEMORY CLOCK</span>
+                    <strong>150 MHz actual / 300 MHz effective</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DDR BANDWIDTH</span>
+                    <strong>4.8 GB/s</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERFORMANCE -->
+        <div class="spec-section">
+            <h3>Theoretical Performance</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>PIXEL FILL RATE</span>
+                    <strong>480 MPixels/s</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>TEXTURE FILL RATE</span>
+                    <strong>480 MTexels/s</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>GEOMETRY RATE</span>
+                    <strong>~15 MVertices/s</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>FP32 PERFORMANCE</span>
+                    <strong>~960 MFLOPS</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUS -->
+        <div class="spec-section">
+            <h3>Bus &amp; Interface</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>BUS INTERFACE</span>
+                    <strong>AGP 4&times; / PCI</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BUS WIDTH</span>
+                    <strong>128-bit memory bus</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>SLOT TYPE</span>
+                    <strong>AGP / PCI</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- GRAPHICS FEATURES -->
+        <div class="spec-section">
+            <h3>Graphics Features</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>HARDWARE T&amp;L</span>
+                    <strong>Yes</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>TRANSFORM &amp; LIGHTING</span>
+                    <strong>Hardware Accelerated</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CUBE ENVIRONMENT MAPPING</span>
+                    <strong>Supported</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MPEG-2 ACCELERATION</span>
+                    <strong>Hardware Assisted</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PIXEL SHADERS</span>
+                    <strong>No programmable pixel shaders</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>VERTEX SHADERS</span>
+                    <strong>No programmable vertex shaders</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- API -->
+        <div class="spec-section">
+            <h3>API Support</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>DIRECTX</span>
+                    <strong>DirectX 7.0</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>OPENGL</span>
+                    <strong>OpenGL 1.2</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>VULKAN</span>
+                    <strong>Not supported</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>OPENCL</span>
+                    <strong>Not supported</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- POWER -->
+        <div class="spec-section">
+            <h3>Power &amp; Physical</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>BOARD POWER</span>
+                    <strong>~13 W SDR</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>POWER CONNECTOR</span>
+                    <strong>None</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>COOLING</span>
+                    <strong>Active / passive depending on board</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>FORM FACTOR</span>
+                    <strong>Single-slot desktop graphics card</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISPLAY -->
+        <div class="spec-section">
+            <h3>Display &amp; Output</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>VGA</span>
+                    <strong>Supported</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DVI</span>
+                    <strong>Board dependent</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>TV OUTPUT</span>
+                    <strong>Board dependent</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- DRIVER SUPPORT -->
+        <div class="spec-section">
+            <h3>Software Support</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>ORIGINAL OS ERA</span>
+                    <strong>Windows 9x / ME</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>WINDOWS 2000</span>
+                    <strong>Supported</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>WINDOWS XP</span>
+                    <strong>Supported</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CURRENT DRIVER STATUS</span>
+                    <strong>Legacy / Unsupported</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEPARATE MODERN GPU COMPARISON CARD -->
+    <div class="comparison-label">
+        MODERN GPU COMPARISON
+    </div>
+
+    <section class="gpu-card">
+        <div class="gpu-header">
+            <h2>NVIDIA GeForce RTX 5090</h2>
+            <div class="manufacturer">
+                NVIDIA &bull; BLACKWELL ARCHITECTURE FLAGSHIP
+            </div>
+        </div>
+
+        <div class="spec-section">
+            <h3>Performance &amp; Technical Specifications</h3>
+
+            <div class="specs">
+                <div class="spec-row">
+                    <span>ARCHITECTURE</span>
+                    <strong>Blackwell (GB202-300)</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>CORE COUNT / PIPELINE</span>
+                    <strong>21,760 CUDA Cores</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>VRAM CAPACITY</span>
+                    <strong>32 GB GDDR7</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MEMORY BUS WIDTH</span>
+                    <strong>512-bit</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>MEMORY BANDWIDTH</span>
+                    <strong>1,792 GB/s</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>POWER CONSUMPTION</span>
+                    <strong>575 Watts (TGP)</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>BUS INTERFACE</span>
+                    <strong>PCI Express 5.0 x16</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>RELEASE ERA</span>
+                    <strong>2025 / Modern Flagship</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>DISPLAY OUTPUTS</span>
+                    <strong>DisplayPort 2.1b / HDMI 2.1b</strong>
+                </div>
+
+                <div class="spec-row">
+                    <span>PRIMARY PURPOSE</span>
+                    <strong>Melting frame rates, rendering entire realities, and requiring its own dedicated circuit breaker.</strong>
+                </div>
+
+                 <div class="spec-row">
+                    <span>SUPPORTED WINDOWS VERSIONS</span>
+                    <strong>Windows 11 and 10</strong>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    YES TESK &bull; Graphics Database
+</footer>
+
+</body>
+</html>

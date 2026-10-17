@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YES TESK — Processors</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05070d;
+            color: #f1f5ff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #080c16;
+            border-bottom: 1px solid #1c2940;
+            padding: 22px 6%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #aebbd0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 6% 45px;
+        }
+
+        .hero span {
+            color: #6ea8ff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 6vw, 4.5rem);
+            line-height: 1;
+            margin: 12px 0 20px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            color: #9caac0;
+            font-size: 1.05rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 6% 80px;
+        }
+
+        .processor {
+            background: linear-gradient(145deg, #0c1220, #080c15);
+            border: 1px solid #1b2a42;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .processor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #1b2a42;
+        }
+
+        .processor-header h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .manufacturer {
+            color: #70809a;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge {
+            background: #111c31;
+            border: 1px solid #294267;
+            color: #8fb8ff;
+            border-radius: 8px;
+            padding: 8px 13px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .spec-section {
+            margin-top: 28px;
+        }
+
+        .spec-section h3 {
+            font-size: 1rem;
+            color: #dce7fa;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            background: #0a101c;
+            border: 1px solid #17243a;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 5px;
+        }
+
+        .spec-row span {
+            color: #7f8da4;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+        }
+
+        .spec-row strong {
+            color: #edf3ff;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .processor-card {
+            background: linear-gradient(145deg, #0c1220, #080c15);
+            border: 1px solid #1b2a42;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 35px;
+        }
+
+        .processor-card h2 {
+            font-size: 1.7rem;
+            margin-bottom: 5px;
+        }
+
+        .quick-specs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 22px 0;
+        }
+
+        .quick-spec {
+            background: #0a101c;
+            border: 1px solid #17243a;
+            border-radius: 8px;
+            padding: 13px;
+        }
+
+        .quick-spec span {
+            display: block;
+            color: #74839a;
+            font-size: 0.68rem;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .quick-spec strong {
+            font-size: 1rem;
+        }
+
+        .view-button {
+            display: inline-block;
+            color: #dce9ff;
+            text-decoration: none;
+            border: 1px solid #294267;
+            background: #101a2c;
+            padding: 11px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .view-button:hover {
+            background: #17263e;
+        }
+
+        footer {
+            border-top: 1px solid #1c2940;
+            padding: 30px 6%;
+            text-align: center;
+            color: #64738b;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 750px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .processor {
+                padding: 20px;
+            }
+
+            .processor-header {
+                flex-direction: column;
+            }
+
+            .quick-specs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .spec-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .spec-row strong {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .quick-specs {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <a href="index.html" class="logo">YES TESK</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="processors.html">Processors</a>
+            <a href="graphics.html">Graphics</a>
+            <a href="ram.html">RAM</a>
+        </nav>
+    </div>
+</header>
+
+
+<section class="hero">
+    <span>Hardware Database</span>
+    <h1>Processors</h1>
+    <p>
+        Detailed specifications for processors in the YES TESK hardware database,
+        including architecture, cores, clocks, cache, memory, graphics, power,
+        interfaces, and platform features.
+    </p>
+</section>
+
+
+<main>
+
+    <!-- ========================================================= -->
+    <!-- INTEL N97 -->
+    <!-- ========================================================= -->
+
+    <section class="processor">
+
+        <div class="processor-header">
+            <div>
+                <h2>Intel N97</h2>
+                <p class="manufacturer">
+                    Intel • Alder Lake-N • Intel 7
+                </p>
+            </div>
+
+            <div class="badge">INTEL CPU</div>
+        </div>
+
+
+        <!-- GENERAL INFORMATION -->
+
+        <div class="spec-section">
+            <h3>General Information</h3>
+
+            <div class="spec-row">
+                <span>MANUFACTURER</span>
+                <strong>Intel</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MODEL</span>
+                <strong>Intel Processor N97</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PROCESSOR FAMILY</span>
+                <strong>Intel Processor N-series</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>ARCHITECTURE</span>
+                <strong>Alder Lake-N</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>CPU ARCHITECTURE</span>
+                <strong>x86-64</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MANUFACTURING PROCESS</span>
+                <strong>Intel 7</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PACKAGE</span>
+                <strong>FCBGA1264</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PACKAGE SIZE</span>
+                <strong>35 × 24 mm</strong>
+            </div>
+        </div>
+
+
+        <!-- CORES AND THREADS -->
+
+        <div class="spec-section">
+            <h3>CPU Cores & Threads</h3>
+
+            <div class="spec-row">
+                <span>TOTAL CPU CORES</span>
+                <strong>4</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TOTAL THREADS</span>
+                <strong>4</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PERFORMANCE CORES</span>
+                <strong>0</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>EFFICIENCY CORES</span>
+                <strong>4</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>HYPER-THREADING</span>
+                <strong>No</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SIMULTANEOUS MULTITHREADING</span>
+                <strong>No</strong>
+            </div>
+        </div>
+
+
+        <!-- FREQUENCY -->
+
+        <div class="spec-section">
+            <h3>Frequency</h3>
+
+            <div class="spec-row">
+                <span>MAXIMUM TURBO FREQUENCY</span>
+                <strong>3.60 GHz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>BASE FREQUENCY</span>
+                <strong>2.00 Ghz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MINIMUM DYNAMIC FREQUENCY</span>
+                <strong>800 Mhz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INTEL SPEED SHIFT</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INTEL SPEEDSTEP</span>
+                <strong>Supported</strong>
+            </div>
+        </div>
+
+
+        <!-- CACHE -->
+
+        <div class="spec-section">
+            <h3>Cache</h3>
+
+            <div class="spec-row">
+                <span>INTEL SMART CACHE</span>
+                <strong>6 MB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TOTAL CACHE</span>
+                <strong>8.4 MB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>L1 CACHE</span>
+                <strong>384 KB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>L2 CACHE</span>
+                <strong>2 MB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>L3 CACHE</span>
+                <strong>6 MB Smart Cache</strong>
+            </div>
+        </div>
+
+
+        <!-- POWER -->
+
+        <div class="spec-section">
+            <h3>Power & Thermal</h3>
+
+            <div class="spec-row">
+                <span>PROCESSOR BASE POWER</span>
+                <strong>12 W</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TDP</span>
+                <strong>12 W</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM JUNCTION TEMPERATURE</span>
+                <strong>105°C</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>THERMAL MONITORING</span>
+                <strong>Supported</strong>
+            </div>
+        </div>
+
+
+        <!-- MEMORY -->
+
+        <div class="spec-section">
+            <h3>Memory Support</h3>
+
+            <div class="spec-row">
+                <span>MAXIMUM MEMORY</span>
+                <strong>32 GB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MEMORY CHANNELS</span>
+                <strong>1</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>DDR4</span>
+                <strong>DDR4-3200</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>DDR5</span>
+                <strong>DDR5-4800</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>LPDDR5</span>
+                <strong>LPDDR5-4800</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM MEMORY SPEED</span>
+                <strong>4800 MT/s</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>ECC MEMORY</span>
+                <strong>Not specified</strong>
+            </div>
+        </div>
+
+
+        <!-- ==================== INTEL N97 INTEGRATED GRAPHICS ==================== -->
+<section class="card">
+    <h2>INTEGRATED GRAPHICS — INTEL UHD GRAPHICS</h2>
+
+    <div class="spec-grid">
+
+        <div class="spec-row">
+            <span>GPU NAME</span>
+            <strong>Intel UHD Graphics</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>GRAPHICS ARCHITECTURE</span>
+            <strong>Intel Gen12</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>EXECUTION UNITS</span>
+            <strong>24 EUs</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>SHADER UNITS</span>
+            <strong>192</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>MAX DYNAMIC FREQUENCY</span>
+            <strong>1.20 GHz</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>MAX GPU CLOCK</span>
+            <strong>1,200 MHz</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>DEDICATED VRAM</span>
+            <strong>None</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>MEMORY TYPE</span>
+            <strong>Shared System Memory</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>MAX MEMORY</span>
+            <strong>32 GB</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>SUPPORTED MEMORY</span>
+            <strong>DDR4-3200 / DDR5-4800 / LPDDR5-4800</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>MAX MEMORY SPEED</span>
+            <strong>4800 MT/s</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>MAX DISPLAYS</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>4K SUPPORT</span>
+            <strong>Yes — 60 Hz</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>DISPLAY OUTPUTS</span>
+            <strong>eDP 1.4b / DP 1.4 / HDMI 2.1 / MIPI-DSI 1.3</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>DIRECTX</span>
+            <strong>12</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>OPENGL</span>
+            <strong>4.6</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>OPENCL</span>
+            <strong>3.0</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>VULKAN</span>
+            <strong>1.3</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>VIDEO ENGINE</span>
+            <strong>Intel Quick Sync Video</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>GPU TYPE</span>
+            <strong>Integrated</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>GPU MEMORY</span>
+            <strong>Dynamic Shared Memory</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>HARDWARE VIDEO ACCELERATION</span>
+            <strong>Yes</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>4K VIDEO SUPPORT</span>
+            <strong>Yes</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>GPU POWER</span>
+            <strong>Integrated into Processor</strong>
+        </div>
+
+        <div class="spec-row">
+            <span>GPU PACKAGE</span>
+            <strong>Integrated CPU Graphics</strong>
+        </div>
+
+    </div>
+</section>
+
+        <!-- DISPLAY -->
+
+        <div class="spec-section">
+            <h3>Display Support</h3>
+
+            <div class="spec-row">
+                <span>MAXIMUM DISPLAY SUPPORT</span>
+                <strong>Up to 4K</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM REFRESH RATE</span>
+                <strong>60 Hz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM DISPLAYS</span>
+                <strong>3</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>eDP</span>
+                <strong>1.4b</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>DISPLAYPORT</span>
+                <strong>1.4</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>HDMI</span>
+                <strong>2.1</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MIPI-DSI</span>
+                <strong>1.3</strong>
+            </div>
+        </div>
+
+
+        <!-- PCI EXPRESS -->
+
+        <div class="spec-section">
+            <h3>PCI Express</h3>
+
+            <div class="spec-row">
+                <span>PCI EXPRESS VERSION</span>
+                <strong>PCIe 3.0</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM PCIe LANES</span>
+                <strong>9</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PCIe GENERATION</span>
+                <strong>Gen 3</strong>
+            </div>
+        </div>
+
+
+        <!-- INSTRUCTION SET -->
+
+        <div class="spec-section">
+            <h3>Instruction Set</h3>
+
+            <div class="spec-row">
+                <span>64-BIT</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SSE4.1</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SSE4.2</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>AVX2</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>AES-NI</span>
+                <strong>Supported</strong>
+            </div>
+        </div>
+
+
+        <!-- VIRTUALIZATION -->
+
+        <div class="spec-section">
+            <h3>Virtualization</h3>
+
+            <div class="spec-row">
+                <span>INTEL VT-x</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INTEL VT-d</span>
+                <strong>Supported</strong>
+            </div>
+        </div>
+
+
+        <!-- SECURITY -->
+
+        <div class="spec-section">
+            <h3>Security & Platform Features</h3>
+
+            <div class="spec-row">
+                <span>INTEL BOOT GUARD</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INTEL OS GUARD</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INTEL GNA</span>
+                <strong>3.0</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>WAKE ON VOICE</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INTEL SPEED SHIFT</span>
+                <strong>Supported</strong>
+            </div>
+        </div>
+
+
+        <!-- AUDIO -->
+
+        <div class="spec-section">
+            <h3>Audio</h3>
+
+            <div class="spec-row">
+                <span>INTEL SMART SOUND TECHNOLOGY</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>HD AUDIO</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MIPI SOUNDWIRE</span>
+                <strong>1.2</strong>
+            </div>
+        </div>
+
+
+        <!-- PHYSICAL -->
+
+        <div class="spec-section">
+            <h3>Physical & Package</h3>
+
+            <div class="spec-row">
+                <span>PACKAGE TYPE</span>
+                <strong>FCBGA1264</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PACKAGE SIZE</span>
+                <strong>35 × 24 mm</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SOCKET / PACKAGE INTERFACE</span>
+                <strong>FCBGA1264</strong>
+            </div>
+        </div>
+
+
+        <!-- MANUFACTURING -->
+
+        <div class="spec-section">
+            <h3>Manufacturing</h3>
+
+            <div class="spec-row">
+                <span>PROCESS TECHNOLOGY</span>
+                <strong>Intel 7</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TRANSISTOR COUNT</span>
+                <strong>Not publicly disclosed</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>DIE SIZE</span>
+                <strong>98.5 mm<sup>2</sup></strong>
+            </div>
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="spec-section">
+            <h3>Processor Summary</h3>
+
+            <div class="spec-row">
+                <span>CORES / THREADS</span>
+                <strong>4 / 4</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM CLOCK</span>
+                <strong>3.60 GHz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>CACHE</span>
+                <strong>6 MB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>POWER</span>
+                <strong>12 W</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INTEGRATED GPU</span>
+                <strong>Intel UHD Graphics — 24 EUs</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM MEMORY</span>
+                <strong>32 GB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM MEMORY SPEED</span>
+                <strong>4800 MT/s</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PCI EXPRESS</span>
+                <strong>PCIe 3.0 — Up to 9 lanes</strong>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================== AMD 3020e CPU ==================== -->
+
+    <section class="card">
+
+        <h2>AMD 3020e — CPU SPECIFICATIONS</h2>
+
+        <div class="spec-grid">
+
+            <div class="spec-row">
+                <span>PROCESSOR</span>
+                <strong>AMD 3020e</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>FAMILY</span>
+                <strong>AMD Ryzen Mobile 3000 Series</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>CODENAME</span>
+                <strong>Dali</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MICROARCHITECTURE</span>
+                <strong>Zen</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MANUFACTURING PROCESS</span>
+                <strong>14 nm</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>CPU CORES</span>
+                <strong>2</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>THREADS</span>
+                <strong>2</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SMT</span>
+                <strong>Not Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>BASE CLOCK</span>
+                <strong>1.20 GHz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM BOOST CLOCK</span>
+                <strong>2.60 GHz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>CPU MULTIPLIER</span>
+                <strong>Locked</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>L1 INSTRUCTION CACHE</span>
+                <strong>64 KB / Core</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>L1 DATA CACHE</span>
+                <strong>32 KB / Core</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TOTAL L1 CACHE</span>
+                <strong>192 KB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>L2 CACHE</span>
+                <strong>512 KB / Core</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TOTAL L2 CACHE</span>
+                <strong>1 MB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>L3 CACHE</span>
+                <strong>4 MB</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TOTAL CACHE</span>
+                <strong>5.19 MB (Calculated)</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TDP</span>
+                <strong>6 W</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>DEFAULT TDP</span>
+                <strong>6 W</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAXIMUM OPERATING TEMPERATURE</span>
+                <strong>95°C</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PACKAGE</span>
+                <strong>FP5</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>PACKAGE TYPE</span>
+                <strong>BGA</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>64-BIT SUPPORT</span>
+                <strong>Yes</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INSTRUCTION SET</span>
+                <strong>x86-64</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SSE</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SSE2</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SSE3</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SSSE3</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SSE4.1 / SSE4.2</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>AVX</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>AVX2</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>AES</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>AMD-V VIRTUALIZATION</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>NX BIT</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>ECC MEMORY</span>
+                <strong>Platform Dependent</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>UNLOCKED MULTIPLIER</span>
+                <strong>No</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>INTEGRATED GRAPHICS</span>
+                <strong>Radeon Vega 3</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>GRAPHICS COMPUTE UNITS</span>
+                <strong>3 CUs</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>GPU MAXIMUM FREQUENCY</span>
+                <strong>1.00 GHz</strong>
+            </div>
+
+        </div>
+
+        <div class="note">
+            Cache totals are shown individually where applicable.
+            The calculated total combines the listed L1, L2 and L3 capacities.
+        </div>
+
+    </section>
+
+
+    <!-- ==================== RADEON VEGA 3 ==================== -->
+
+    <section class="card">
+
+        <h2>INTEGRATED GRAPHICS — AMD RADEON VEGA 3</h2>
+
+        <div class="spec-grid">
+
+            <div class="spec-row">
+                <span>GPU NAME</span>
+                <strong>AMD Radeon Vega 3 Graphics</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>GPU ARCHITECTURE</span>
+                <strong>Vega</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>COMPUTE UNITS</span>
+                <strong>3 CUs</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SHADER UNITS</span>
+                <strong>192</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>TEXTURE MAPPING UNITS</span>
+                <strong>12 TMUs</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>RENDER OUTPUT UNITS</span>
+                <strong>4 ROPs</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAX GPU FREQUENCY</span>
+                <strong>1.00 GHz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAX GPU CLOCK</span>
+                <strong>1,000 MHz</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>DEDICATED VRAM</span>
+                <strong>None</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MEMORY TYPE</span>
+                <strong>Shared System Memory</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>SUPPORTED MEMORY</span>
+                <strong>DDR4</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAX MEMORY SPEED</span>
+                <strong>2400 MT/s</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MEMORY CHANNELS</span>
+                <strong>Dual Channel</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MEMORY BUS</span>
+                <strong>128-bit</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>MAX MEMORY BANDWIDTH</span>
+                <strong>38.4 GB/s</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>GPU TYPE</span>
+                <strong>Integrated Graphics</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>GPU MEMORY</span>
+                <strong>Dynamic Shared Memory</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>DIRECTX</span>
+                <strong>12</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>OPENGL</span>
+                <strong>4.6</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>OPENCL</span>
+                <strong>2.0</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>VULKAN</span>
+                <strong>Supported</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>VIDEO DECODE</span>
+                <strong>Hardware Accelerated</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>VIDEO ENCODE</span>
+                <strong>Hardware Accelerated</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>HARDWARE VIDEO ACCELERATION</span>
+                <strong>Yes</strong>
+            </div>
+
+            <div class="spec-row">
+                <span>GPU POWER</span>
+                <strong>Integrated into Processor</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<footer>
+    YES TESK — Hardware Database
+</footer>
+
+</body>
+</html>
+<!-- Intel 4004 -->
+<div class="card">
+    <h2>Intel 4004</h2>
+
+    <p>
+        Intel 4004 — the world's first commercially available microprocessor,
+        introduced in 1971 as part of the MCS-4 chipset.
+    </p>
+
+    <div class="spec-row">
+        <span>RELEASE DATE</span>
+        <strong>November 15, 1971</strong>
+    </div>
+
+    <div class="spec-row">
+        <span>ARCHITECTURE</span>
+        <strong>4-bit</strong>
+    </div>
+
+    <div class="spec-row">
+        <span>CORES</span>
+        <strong>1</strong>
+    </div>
+
+<div class="spec-row">
+        <span>BASE FREQUENCY</span>
+        <strong>740 kHz</strong>
+    </div>
+
+<div class="spec-row">
+        <span>MAX TURBO FREQUENCY</span>
+        <strong>its to slow to go that fast lol</strong>
+    </div>
+
+    <div class="spec-row">
+        <span>TRANSISTORS</span>
+        <strong>2,300</strong>
+    </div>
+
+    <div class="spec-row">
+        <span>MANUFACTURING PROCESS</span>
+        <strong>10 µm</strong>
+    </div>
+
+    <div class="spec-row">
+        <span>PACKAGE</span>
+        <strong>16-pin DIP</strong>
+    </div>
+
+    <div class="spec-row">
+        <span>ORIGINAL APPLICATION</span>
+        <strong>Busicom 141-PF Calculator</strong>
+    </div>
+
+    <div class="spec-row">
+        <span>FAMILY</span>
+        <strong>MCS-4</strong>
+    </div>
+
+    <div class="spec-row">
+        <span>DIE SIZE</span>
+        <strong>12 mm<sup>2</sup></strong>
+    </div>
+
+    <div class="spec-row">
+        <span>MAXIMUM MEMORY CAPACITY</span>
+        <strong>640 BYTES not gigabytes BYTES</strong>
+    </div>
+
+</div>
+
